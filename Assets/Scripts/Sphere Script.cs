@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SphereScript : MonoBehaviour
 {
+    [SerializeField] public float lifeTime;
+    [SerializeField] public float Speed;
     void Awake()
     {
 
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, lifeTime);
 
     }
 
@@ -20,6 +22,6 @@ public class SphereScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(2 * Time.deltaTime, 0, 0);
+        transform.Translate(Speed * Time.deltaTime, 0, 0);
     }
 }
