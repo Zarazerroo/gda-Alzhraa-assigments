@@ -8,7 +8,6 @@ public class SphereScript : MonoBehaviour
     [SerializeField] public float Speed;
     void Awake()
     {
-
         Destroy(gameObject, lifeTime);
 
     }

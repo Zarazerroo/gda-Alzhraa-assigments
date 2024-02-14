@@ -4,35 +4,35 @@ using UnityEngine;
 
 public class Capsulmovment : MonoBehaviour
 {
-  Vector3 forwardMove = new Vector3(0.1f, 0, 0);
-  Vector3 backourdMove = new Vector3(-0.1f, 0, 0);
-  Vector3 RightMove = new Vector3(0, 0, -0.1f);
-  Vector3 leftMove = new Vector3(0, 0, 0.1f);
+  public Rigidbody charcterRigi;
+  public float speed = 10.0f;
+  void Awake()
+  {
+    charcterRigi = GetComponent<Rigidbody>();
+  }
 
   void FixedUpdate()
   {
     if (Input.GetKey(KeyCode.UpArrow))
     {
-      transform.position += forwardMove;
+      charcterRigi.velocity = Vector3.forward;
     }
 
     if (Input.GetKey(KeyCode.DownArrow))
     {
-      transform.position += backourdMove;
+      charcterRigi.velocity = Vector3.back;
     }
 
     if (Input.GetKey(KeyCode.RightArrow))
     {
-      transform.position += RightMove;
+      charcterRigi.velocity = Vector3.right;
     }
 
     if (Input.GetKey(KeyCode.LeftArrow))
     {
-      transform.position += leftMove;
-
+      charcterRigi.velocity = Vector3.left;
     }
 
   }
-
 
 }
