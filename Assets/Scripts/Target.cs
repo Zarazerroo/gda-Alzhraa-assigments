@@ -5,15 +5,23 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    public LogicManger logic;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        logic = GameObject.FindGameObjectWithTag("logic").GetComponent<LogicManger>();
+    }
 
     void OnCollisionEnter(Collision collision)
     {
 
-        Debug.Log(collision.gameObject);
+
 
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            logic.addScore();
         }
     }
 }

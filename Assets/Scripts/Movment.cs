@@ -7,13 +7,7 @@ public class Movment : MonoBehaviour
     public Rigidbody charcterRigi;
     public float speed = 10.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+    // Start is called before the first frame updateframe
     void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
