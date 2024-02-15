@@ -9,9 +9,9 @@ public class Target : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        Debug.Log(collision.contacts[0].otherCollider.name);
+        Debug.Log(collision.gameObject);
 
-        if (collision.contacts[0].otherCollider.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }

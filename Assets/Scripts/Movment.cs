@@ -16,22 +16,22 @@ public class Movment : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             charcterRigi.velocity = Vector3.forward * speed;
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             charcterRigi.velocity = Vector3.back * speed;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             charcterRigi.velocity = Vector3.right * speed;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             charcterRigi.velocity = Vector3.left * speed;
         }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SphereScript : MonoBehaviour
 {
+
+
     [SerializeField] public float lifeTime;
     [SerializeField] public float Speed;
     void Awake()
