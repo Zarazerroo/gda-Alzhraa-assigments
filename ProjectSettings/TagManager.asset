@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - logic
   layers:
   - Default
   - TransparentFX

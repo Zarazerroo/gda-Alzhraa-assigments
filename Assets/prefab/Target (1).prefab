@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2234903024908807701}
   - component: {fileID: 6800658675359389529}
   m_Layer: 0
-  m_Name: Target Spwan point
+  m_Name: Bullet spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shpere: {fileID: 5514786988685241946, guid: 83b262b7c2611f145b79e9d65ed57326, type: 3}
+  enmiesdata: {fileID: 11400000, guid: bdec718f87876454c8e7d736ae47d183, type: 2}
 --- !u!65 &6800658675359389529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039589448251026277}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.24928844, z: -0, w: 0.9684293}
+  m_LocalRotation: {x: 0, y: -0.24928996, z: 0, w: 0.9684289}
   m_LocalPosition: {x: 82.65063, y: -1010.0603, z: 176.59843}
   m_LocalScale: {x: 1.9899, y: 1.9899, z: 1.9899}
   m_ConstrainProportionsScale: 0
@@ -134,7 +135,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aa687d57e9cbd134b8545550b4ab507c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -26,7 +26,8 @@ public class SphereSpawner : MonoBehaviour
 
     void SpawnShpere()
     {
-        Instantiate(Shpere, transform.position, Quaternion.identity);
+        var go = Instantiate(Shpere, transform.position, Quaternion.identity);
+        go.GetComponent<SphereScript>().Init(10);
     }
 
 
