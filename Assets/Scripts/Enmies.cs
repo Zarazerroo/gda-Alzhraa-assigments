@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Enmies : MonoBehaviour
 {
-    public LogicManger logic;
+
 
     // Start is called before the first frame update
     void Start()
-    {
-        logic = FindObjectOfType<LogicManger>();
+    {   //// No need any more since using Singletone
+        //// logic = FindObjectOfType<LogicManger>();
         //GameObject.FindGameObjectWithTag("logic").GetComponent<LogicManger>();
     }
 
@@ -19,7 +19,7 @@ public class Enmies : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            logic.addScore();
+            LogicManger.Instanc.addScore();
         }
     }
 }
