@@ -19,7 +19,7 @@ public class Enmies : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            LogicManger.Instanc.addScore();
+            LogicManger.Instance.addScore();
         }
     }
 }

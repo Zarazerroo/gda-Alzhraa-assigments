@@ -7,27 +7,24 @@ using TMPro;
 
 public class LogicManger : MonoBehaviour
 {
-    public static LogicManger Instanc;
     public int playerScore;
     public TextMeshProUGUI scoreText;
-    [ContextMenu("Increace Score")]
 
-    private void Awake()
+    public static LogicManger Instance { get; private set; }
+
+
+    private void Awake()         ///this is the manual way to creat single tone
     {
-        if (Instanc != null)
+        if (Instance != null)
             Debug.LogError($"Duplicate LogicManger!");
-        Instanc = this;
+        Instance = this;
+    }
+    private void OnDestroy()  ///this is the manual way to creat single tone
+    {
+        Instance = null;
     }
 
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        Instanc = null;
-    }
+    [ContextMenu("Increace Score")]
     public void addScore()
     {
         playerScore = playerScore + 1;
