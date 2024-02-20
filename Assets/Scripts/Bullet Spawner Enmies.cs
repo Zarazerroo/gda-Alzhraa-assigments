@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletSpawnerEnmies : MonoBehaviour
@@ -9,13 +10,24 @@ public class BulletSpawnerEnmies : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnShpere", 2.0f, enmiesdata.delayBetweenShooting);
+        StartCoroutine(SpawnCoroutine());
+        //// I cancel using Invoke because I want to tray coroutines
+        ////InvokeRepeating("SpawnShpere", 2.0f, enmiesdata.delayBetweenShooting); 
     }
 
-    void SpawnShpere()
+    //// void SpawnShpere()
+    /// {
+    ///     var go = Instantiate(Shpere, transform.position, Quaternion.identity); 
+    ///     go.GetComponent<SphereScript>().Init(enmiesdata.bulletSpeed); changed because we wan to use scriptable object but the speed in another script
+    ////  }
+
+    private IEnumerator SpawnCoroutine()
     {
-        var go = Instantiate(Shpere, transform.position, Quaternion.identity);
-        go.GetComponent<SphereScript>().Init(enmiesdata.bulletSpeed);
-    }
+        while (true)
+        {
+            Instantiate(Shpere, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(1.0f);
 
+        }
+    }
 }

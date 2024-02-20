@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1516257438052758339}
   - component: {fileID: 7614235221874278259}
   m_Layer: 0
-  m_Name: Sphere Targt
+  m_Name: Sphere Enimes
   m_TagString: Shootable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15367baa4f22ad4392ccba1c07c37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.8
-  Speed: 15
+  lifeTime: 6
+  speed: 10
 --- !u!54 &7614235221874278259
 Rigidbody:
   m_ObjectHideFlags: 0

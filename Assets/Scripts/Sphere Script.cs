@@ -6,29 +6,22 @@ public class SphereScript : MonoBehaviour
 {
 
 
-    [SerializeField] public float lifeTime;
-    private float m_speed;
+    [SerializeField] private float lifeTime;
+    [SerializeField] private float speed;
 
+    /// private float m_speed; this was for the scriptable object look in the Bullet Spawner Enmies script
     void Awake()
     {
         Destroy(gameObject, lifeTime);
-
     }
 
-    public void Init(float speed)
-    {
-        m_speed = speed;
-    }
+    //public void Init(float speed) for scrpitable object
+    /// {
+    //     m_speed = speed;
+    // }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(m_speed * Time.deltaTime, 0, 0);
+        transform.Translate(speed * Time.deltaTime, 0, 0);
     }
 }

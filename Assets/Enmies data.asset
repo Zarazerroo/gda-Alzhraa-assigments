@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc8b46d012534243a5dc36cf1951ffc, type: 3}
   m_Name: Enmies data
   m_EditorClassIdentifier: 
-  delayBetweenShooting: 2
-  bulletSpeed: 10
+  delayBetweenShooting: 1
+  bulletSpeed: 20

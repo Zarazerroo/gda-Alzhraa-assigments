@@ -12,7 +12,7 @@ public class SphereSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnShpere();
+            //SpawnShpere();
             InvokeRepeating("SpawnShpere", 0.0f, 1.0f);
 
         }
@@ -27,10 +27,8 @@ public class SphereSpawner : MonoBehaviour
     void SpawnShpere()
     {
         var go = Instantiate(Shpere, transform.position, Quaternion.identity);
-        go.GetComponent<SphereScript>().Init(10);
+        /// go.GetComponent<SphereScript>().Init(10);
     }
-
-
 
 }
 
