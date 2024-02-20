@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class BulletSpawnerEnmies : MonoBehaviour
 {
-    [SerializeField] public GameObject Shpere;
-    [SerializeField] private Enmiesdata enmiesdata;
+    [SerializeField] public GameObject shpere;
+    [SerializeField] private Rigidbody enmey;
 
+    /// [SerializeField] private Enmiesdata enmiesdata; was for scriptable oject 
+    void Awake()
+    {
+        StartCoroutine(EnmiesUpDown());
+    }
     void Start()
     {
         StartCoroutine(SpawnCoroutine());
+        StartCoroutine(EnmiesUpDown());
         //// I cancel using Invoke because I want to tray coroutines
         ////InvokeRepeating("SpawnShpere", 2.0f, enmiesdata.delayBetweenShooting); 
     }
@@ -25,9 +31,25 @@ public class BulletSpawnerEnmies : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(Shpere, transform.position, Quaternion.identity);
+            Instantiate(shpere, transform.position, Quaternion.identity);
             yield return new WaitForSeconds(1.0f);
 
         }
     }
+
+    private IEnumerator EnmiesUpDown()
+    {
+        while (true)
+        {
+            enmey.velocity = Vector3.up * 5;
+            yield return new WaitForSeconds(1.0f);
+            enmey.velocity = Vector3.down * 5;
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
+
+
+
+
 }

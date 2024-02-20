@@ -19,6 +19,11 @@ public class LogicManger : MonoBehaviour
         Instanc = this;
     }
 
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void OnDestroy()
     {
         Instanc = null;
