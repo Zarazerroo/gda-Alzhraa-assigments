@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5514786988685241946
+--- !u!1 &4126042555972216801
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 258842721747147155}
-  - component: {fileID: 991979695526163163}
-  - component: {fileID: 4563507591162753025}
-  - component: {fileID: 7577287574187160434}
-  - component: {fileID: 1516257438052758339}
-  - component: {fileID: 7614235221874278259}
+  - component: {fileID: 3244911395366420206}
+  - component: {fileID: 7254927771102620741}
+  - component: {fileID: 8626969952363839137}
+  - component: {fileID: 6580011886381115609}
+  - component: {fileID: 9197517069764867112}
   m_Layer: 0
-  m_Name: Sphere Enimes
-  m_TagString: Shootable
+  m_Name: Player bullet
+  m_TagString: Playerbullets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &258842721747147155
+--- !u!4 &3244911395366420206
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5514786988685241946}
+  m_GameObject: {fileID: 4126042555972216801}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3068257, y: 0.3068257, z: 0.3068257}
+  m_LocalPosition: {x: 136.5581, y: 4.33, z: 174.29}
+  m_LocalScale: {x: 0.2501694, y: 0.2501694, z: 0.2501694}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &991979695526163163
+--- !u!33 &7254927771102620741
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5514786988685241946}
+  m_GameObject: {fileID: 4126042555972216801}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4563507591162753025
+--- !u!23 &8626969952363839137
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5514786988685241946}
+  m_GameObject: {fileID: 4126042555972216801}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -66,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 703444cc1af5a6344923e253a48424c3, type: 2}
+  - {fileID: 2100000, guid: f1add09bf4554e94fa2463e5ca0bc4a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,13 +87,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7577287574187160434
+--- !u!135 &6580011886381115609
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5514786988685241946}
+  m_GameObject: {fileID: 4126042555972216801}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -109,44 +108,17 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1516257438052758339
+--- !u!114 &9197517069764867112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5514786988685241946}
+  m_GameObject: {fileID: 4126042555972216801}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e15367baa4f22ad4392ccba1c07c37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 6
-  speed: 10
---- !u!54 &7614235221874278259
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5514786988685241946}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  lifeTime: 5
+  speed: 7

@@ -9,55 +9,64 @@ public class Enmies : MonoBehaviour
     [SerializeField] public GameObject shpere;
     [SerializeField] private Rigidbody enmey;
 
-    /// [SerializeField] private Enmiesdata enmiesdata; was for scriptable oject 
-    void Awake()
-    {
-        //StartCoroutine(EnmiesUpDown());
+    [SerializeField] private Transform Playertransform;
+    private Vector3 PlayerDirecation = Vector3.forward;
 
-    }
+
+    /// [SerializeField] private Enmiesdata enmiesdata; for scriptable object data
+
     void Start()
     {
         StartCoroutine(SpawnCoroutine());
-        //// I cancel using Invoke because I want to tray coroutines
-        ////InvokeRepeating("SpawnShpere", 2.0f, enmiesdata.delayBetweenShooting); 
-        //// No need any more since using Singletone
-        //// logic = FindObjectOfType<LogicManger>();
-        //GameObject.FindGameObjectWithTag("logic").GetComponent<LogicManger>();
+
+        /// //StartCoroutine(EnmiesUpDown()); corotine practice
+        /// InvokeRepeating("SpawnShpere", 2.0f, enmiesdata.delayBetweenShooting);
+        //// logic = FindObjectOfType<LogicManger>(); //// No need any more since using Singletone 1
+        //GameObject.FindGameObjectWithTag("logic").GetComponent<LogicManger>(); //// No need any more since using Singletone 2
+    }
+    void Update()
+    {
+        PlayerDirecation = (Playertransform.position - transform.position).normalized;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Playerbullets")
         {
             Destroy(gameObject);
             LogicManger.Instance.addScore();
         }
     }
+
     private IEnumerator SpawnCoroutine()
     {
         while (true)
         {
-            Instantiate(shpere, spawnPoint.position, Quaternion.identity);
-            yield return new WaitForSeconds(6.0f);
 
+
+            yield return new WaitForSeconds(2.0f);
+            GameObject EnemyBullet = Instantiate(shpere, spawnPoint.position, Quaternion.identity);
+            EnemyBullet.GetComponent<EnemiesBullets>().SetPlayerDirecation(PlayerDirecation);
         }
     }
-    private IEnumerator EnmiesUpDown()
-    {
-        while (true)
-        {
-            enmey.velocity = Vector3.up * 5;
-            yield return new WaitForSeconds(1.0f);
-            enmey.velocity = Vector3.down * 5;
-            yield return new WaitForSeconds(1.0f);
-        }
-    }
-
-    /// void SpawnShpere()
-    /// {
-    ///     var go = Instantiate(Shpere, transform.position, Quaternion.identity); 
-    ///     go.GetComponent<SphereScript>().Init(enmiesdata.bulletSpeed); changed because we wan to use scriptable object but the speed in another script
-    ////  }
-
-
 }
+
+
+
+// void SpawnShpere()
+// {
+//        var go = Instantiate(shpere, transform.position, Quaternion.identity);
+
+//    go.GetComponent<EnemiesBullets>().Init(enmiesdata.bulletSpeed); for scriptable object data
+// } 
+
+// private IEnumerator EnmiesUpDown()
+// {
+//    while (true)
+//     {
+//         enmey.velocity = Vector3.up * 5;
+//            yield return new WaitForSeconds(1.0f);   corotine practice
+//     enmey.velocity = Vector3.down * 5;
+//  yield return new WaitForSeconds(1.0f);
+//}
+//}

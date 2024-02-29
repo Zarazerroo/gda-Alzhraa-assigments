@@ -28,7 +28,7 @@ public class EnmeyTrigger : MonoBehaviour
             {
                 var pos = enemy.transform.position;
                 pos.y = 4;
-                seq.Append(enemy.transform.DOMove(pos, 5).SetEase(Ease.OutCubic));
+                seq.Append(enemy.transform.DOMove(pos, 3).SetEase(Ease.OutCubic));
                 enemy.gameObject.SetActive(true);
             }
 

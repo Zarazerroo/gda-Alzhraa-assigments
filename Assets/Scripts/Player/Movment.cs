@@ -36,6 +36,7 @@ public class Movment : MonoBehaviour
             //isMoving = true;
             charcterRigi.velocity = Vector3.forward * speed;
             animator.SetBool("isMoving", true);
+            transform.rotation = Quaternion.LookRotation(charcterRigi.velocity);
         }
 
         else if (Input.GetKey(KeyCode.D) && !isMoving)
@@ -43,6 +44,7 @@ public class Movment : MonoBehaviour
             //isMoving = true;
             charcterRigi.velocity = Vector3.back * speed;
             animator.SetBool("isMoving", true);
+            transform.rotation = Quaternion.LookRotation(charcterRigi.velocity);
         }
 
         else if (Input.GetKey(KeyCode.W) && !isMoving)
@@ -50,6 +52,7 @@ public class Movment : MonoBehaviour
             //isMoving = true;
             charcterRigi.velocity = Vector3.right * speed;
             animator.SetBool("isMoving", true);
+            transform.rotation = Quaternion.LookRotation(charcterRigi.velocity);
         }
 
         else if (Input.GetKey(KeyCode.S) && !isMoving)
@@ -57,14 +60,16 @@ public class Movment : MonoBehaviour
             // isMoving = true;
             charcterRigi.velocity = Vector3.left * speed;
             animator.SetBool("isMoving", true);
+            transform.rotation = Quaternion.LookRotation(charcterRigi.velocity);
         }
 
-        else if (!Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A))
+        else //if (!Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A))
         {
             //isMoving = false;
             charcterRigi.velocity = Vector3.zero * speed;
             animator.SetBool("isMoving", false);
         }
+
 
     }
 
