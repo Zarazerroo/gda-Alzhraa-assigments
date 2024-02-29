@@ -15,14 +15,9 @@ public class EnmeyTrigger : MonoBehaviour
         //GameObject.FindGameObjectsWithTag("Shootable", );
         enmies = FindObjectsByType<Enmies>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     private void OnTriggerEnter(Collider Target)
     {
         if (Target.gameObject.tag == "Player")

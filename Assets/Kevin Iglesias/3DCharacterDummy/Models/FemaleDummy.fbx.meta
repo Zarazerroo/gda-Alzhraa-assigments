@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 317a56890b5c8e74ab1d492a2c7fb608
+guid: 7144acb9459793743bd1b60b10fe0d30
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -240,8 +240,8 @@ ModelImporter:
     400232: B-upper_arm_L
     400234: B-upper_arm_R
     2100000: DummyMaterial
-    2300000: MaleDummy_Mesh
-    3300000: MaleDummy_Mesh
+    2300000: FemaleDummy_Mesh
+    3300000: FemaleDummy_Mesh
     4300000: MaleDummy_Mesh
     4300002: FemaleDummy_Mesh
     9500000: //RootNode
@@ -659,5 +659,5 @@ AssetOrigin:
   productId: 178395
   packageName: 3D Character Dummy
   packageVersion: 1.0
-  assetPath: Assets/Kevin Iglesias/3DCharacterDummy/Models/MaleDummy.fbx
+  assetPath: Assets/Kevin Iglesias/3DCharacterDummy/Models/FemaleDummy.fbx
   uploadId: 402839

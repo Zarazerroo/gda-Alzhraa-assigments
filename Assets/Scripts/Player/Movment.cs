@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Movment : MonoBehaviour
 {
+    private Animator animator;
+    private bool isMoving = false;
     public Rigidbody charcterRigi;
     private float speed = 10.0f;
+
+    void Start()
+    {
+        // Get the Animator component
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -22,28 +30,43 @@ public class Movment : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A))
+
+        if (Input.GetKey(KeyCode.A) && !isMoving)
         {
+            //isMoving = true;
             charcterRigi.velocity = Vector3.forward * speed;
+            animator.SetBool("isMoving", true);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && !isMoving)
         {
+            //isMoving = true;
             charcterRigi.velocity = Vector3.back * speed;
+            animator.SetBool("isMoving", true);
         }
 
-        if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKey(KeyCode.W) && !isMoving)
         {
+            //isMoving = true;
             charcterRigi.velocity = Vector3.right * speed;
+            animator.SetBool("isMoving", true);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) && !isMoving)
         {
+            // isMoving = true;
             charcterRigi.velocity = Vector3.left * speed;
+            animator.SetBool("isMoving", true);
+        }
+
+        else if (!Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.W) || !Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A))
+        {
+            //isMoving = false;
+            charcterRigi.velocity = Vector3.zero * speed;
+            animator.SetBool("isMoving", false);
         }
 
     }
-
 
 
 }
