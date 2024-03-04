@@ -10,7 +10,12 @@ public class Enmies : MonoBehaviour
     [SerializeField] private Rigidbody enmey;
 
     [SerializeField] private Transform Playertransform;
+
+    [SerializeField] private AudioSource enimesAudioDie;
+    private ParticleSystem part;
+
     private Vector3 PlayerDirecation = Vector3.forward;
+
 
 
     /// [SerializeField] private Enmiesdata enmiesdata; for scriptable object data
@@ -18,6 +23,9 @@ public class Enmies : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnCoroutine());
+        part = GetComponent<ParticleSystem>();
+
+
 
         /// //StartCoroutine(EnmiesUpDown()); corotine practice
         /// InvokeRepeating("SpawnShpere", 2.0f, enmiesdata.delayBetweenShooting);
@@ -31,18 +39,21 @@ public class Enmies : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Playerbullets")
+        if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            enimesAudioDie.Play();
+            part.Play();
+            Destroy(gameObject, 2.0f);
             LogicManger.Instance.addScore();
+
         }
+
     }
 
     private IEnumerator SpawnCoroutine()
     {
         while (true)
         {
-
 
             yield return new WaitForSeconds(2.0f);
             GameObject EnemyBullet = Instantiate(shpere, spawnPoint.position, Quaternion.identity);

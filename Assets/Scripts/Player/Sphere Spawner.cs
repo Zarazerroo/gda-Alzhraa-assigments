@@ -10,11 +10,13 @@ public class SphereSpawner : MonoBehaviour
     [SerializeField] public Transform spawnPoint;
     private Animator animator;
     private Movment playerMovement;
+    private AudioSource shootSound;
 
     void Start()
     {
         // Get the Animator component
         animator = GetComponent<Animator>();
+        shootSound = GetComponent<AudioSource>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<Movment>();
     }
     void Update()
@@ -39,6 +41,7 @@ public class SphereSpawner : MonoBehaviour
     public void ShootNow()
     {
         SpawnShpere();
+        shootSound.Play();
     }
 }
 
