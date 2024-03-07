@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material 5
+  m_Name: New Material
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -79,7 +79,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.55403095, g: 0.9433962, b: 0.53103113, a: 1}
-    - _EmissionColor: {r: 0.3918981, g: 1.3089008, b: 0.3745594, a: 1}
+    - _Color: {r: 1, g: 0.11372549, b: 0.34276712, a: 1}
+    - _EmissionColor: {r: 3.5723276, g: 0.41564745, b: 0.41564745, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
